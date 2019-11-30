@@ -191,6 +191,34 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <requireMavenVersion>
+                                        <version>[3.6.0,)</version>
+                                    </requireMavenVersion>
+                                    <requireJavaVersion>
+                                        <version>11</version>
+                                    </requireJavaVersion>
+                                    <requireReleaseDeps>
+                                        <onlyWhenRelease>true</onlyWhenRelease>
+                                        <message>Release builds must not have snapshot dependencies</message>
+                                    </requireReleaseDeps>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
