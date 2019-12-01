@@ -202,18 +202,16 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <rule>
-                                    <requireMavenVersion>
-                                        <version>[3.6.0,)</version>
-                                    </requireMavenVersion>
-                                    <requireJavaVersion>
-                                        <version>11</version>
-                                    </requireJavaVersion>
-                                    <requireReleaseDeps>
-                                        <onlyWhenRelease>true</onlyWhenRelease>
-                                        <message>Release builds must not have snapshot dependencies</message>
-                                    </requireReleaseDeps>
-                                </rule>
+                                <requireMavenVersion>
+                                    <version>[3.6.0,)</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>11</version>
+                                </requireJavaVersion>
+                                <requireReleaseDeps>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                    <message>Release builds must not have snapshot dependencies</message>
+                                </requireReleaseDeps>
                             </rules>
                         </configuration>
                     </execution>
